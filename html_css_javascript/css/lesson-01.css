@@ -1,0 +1,68 @@
+* {
+      box-sizing: border-box;
+  }
+
+/* Style the header */
+header {
+  background-color: #fb8500;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  width: 30%;
+  height: auto; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+  height: auto; /* only for demonstration, should be removed */
+}
+
+
+/* Put items in section in a row */
+section {
+  display: flex;
+  flex-direction: row;
+}
+
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  section {
+    flex-direction: column;
+  }
+
+  nav, article {
+	width: 100%;
+  } 
+}
+
+.highlight-link {
+  background-color: aquamarine;
+}
+
+code {
+  background-color: bisque;
+}

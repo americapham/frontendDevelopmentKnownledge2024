@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frontend development knownledge</title>
+  <!-- Import External CSS-->
+  <link href="css/lesson-01.css" rel="stylesheet" /> 
+  <style>
+    /* Internal CSS */
+
+  </style>
+  <script src="js/lesson-01.js">
+    function loadMyContent() {
+      fetch("http://localhost:3000/my-content.txt", {mode: "cors"})
+        .then((response) => response.text())
+        .then((data) => {
+          // Replace the content inside the Article part with the fetched content
+          document.querySelector("article").innerHTML = data;
+        })
+        .catch((error) => {
+          console.error("Error fetching content:", error);
+        });
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <h2>Frontend development knownledge</h2>
+  </header>
+  <section>
+    <nav>
+      <ul>
+        <li><a href="#">The first step</a></li>
+        <li><a href="http://www.google.com">Open link</a></li>
+        <li><a href="#">Make left menu and body have same height</a></li>
+        <li><a href="#">My content</a></li>
+      </ul>
+      <img src="images/Koala.jpg" alt="login user" width="50px" height="50px"/>
+    </nav>
+    
+    <article>
+      Click on each assignment to see solution for it
+      <ol>
+        <li>Open content in new tab when user click on a link (<a href="#openLinkSolution">check solution</a>)</li>
+        <li>Make left menu and body have same height (<a href="#fixLayoutIssue">check solution</a>)</li>
+        <li>On click on link "My content": same layout, different content (<a href="#openMyContentSolution">check solution</a>)</li>
+        <li>Add 1 button to "My content" page, show popup "My name is Pham Thanh My"</li>
+        <li>Add 3 lables + 3 textbox: ID, Name, Address</li>
+        <li>Make image be displayed right above "footer"</li>
+        <li>Make red color for "In this example" text in "Example 1" paragraph</li>
+      </ol>
+
+      <h4 id="openLinkSolution">Open content in new tab when user click on a link</h4>
+      <p>
+        Click on this <a href="http://www.google.com" target="_blank" rel="noreferrer noopener">link</a> to open Google page in new tab
+      </p>
+      
+      <h4 id="fixLayoutIssue">Make left menu and body have same height</h4>
+      In this example, we have created a header, two columns/boxes and a footer. On smaller screens, the columns will stack on top of each other.
+      Resize the browser window to see the responsive effect
+
+      <p>
+        At the begining, Float technique is used. Applying floating technique make Nav and Article element be out of flow. Nav's height and Article's height did't grow same (The container, Section's height also didn't grow).
+        To fix the issue, Float Layout technique is used to replace for Float Layout.
+        <br/>
+        CSS Media query is used to change layout acordingly to screen width. Remember to set viewport in html to make media query work properly.
+        Viewport meta tag: Ensure that the viewport meta tag is properly set in the HTML document to ensure that the website is displayed correctly on mobile devices. It should include the width=device-width property.
+        <code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</code>
+      </p>
+      
+      <h4>"My content" solution</h4>
+      Please click on <button onclick="loadMyContent()">My content</button> to see how it work!
+
+      <h3>Example 1</h3>
+      <p>In this example, we have created a header, two columns/boxes and a footer. On smaller screens, the columns will
+        stack on top of each other.
+        Resize the browser window to see the responsive effect (you will learn more about this in our next chapter -
+        HTML Responsive.)</p>
+
+      <h3>Example 2:</h3>
+      <p>
+        In this example, we have created a header, two columns/boxes and a footer. On smaller screens, the columns will
+        stack on top of each other.
+        Resize the browser window to see the responsive effect (you will learn more about this in our next chapter -
+        HTML Responsive.)
+      </p>
+      <h3>Example4:</h3>
+      <p>In this example, we have created a header, two columns/boxes and a footer. On smaller screens, the columns will
+        stack on top of each other.
+        Resize the browser window to see the responsive effect (you will learn more about this in our next chapter -
+        HTML Responsive.)
+      </p>
+    </article>
+  </section>
+    
+  <footer>
+    <p>Footer</p>
+  </footer>
+</body>
+</html>
