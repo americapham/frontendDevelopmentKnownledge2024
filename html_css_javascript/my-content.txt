@@ -2,5 +2,8 @@
     <h1>This is my content</h1>. 
     Please click <a href="lesson-01.html">here</a> to go back!
 </p>
-Scripts can be placed in the <body>, or in the <head> section of an HTML page, or in both.
-Placing scripts at the bottom of the <body> element improves the display speed, because script interpretation slows down the display.
+<p>
+    Scripts can be placed in the <body>, or in the <head> section of an HTML page, or in both.
+    Placing scripts at the bottom of the <body> element improves the display speed, because script interpretation slows down the display.
+</p>
+<button onclick="showMyName()">Show my name</button>

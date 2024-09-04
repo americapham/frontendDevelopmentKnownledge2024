@@ -9,3 +9,7 @@ function loadMyContent() {
 			console.error("Error fetching content:", error);
 		});
 }
+
+function showMyName() {
+	alert("My name is Pham Thanh My");
+}

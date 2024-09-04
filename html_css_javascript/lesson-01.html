@@ -9,17 +9,6 @@
 
   </style>
   <script src="js/lesson-01.js">
-    function loadMyContent() {
-      fetch("http://localhost:3000/my-content.txt", {mode: "cors"})
-        .then((response) => response.text())
-        .then((data) => {
-          // Replace the content inside the Article part with the fetched content
-          document.querySelector("article").innerHTML = data;
-        })
-        .catch((error) => {
-          console.error("Error fetching content:", error);
-        });
-    }
   </script>
 </head>
 
@@ -35,7 +24,7 @@
         <li><a href="#">Make left menu and body have same height</a></li>
         <li><a href="#">My content</a></li>
       </ul>
-      <img src="images/Koala.jpg" alt="login user" width="50px" height="50px"/>
+      <img src="images/Koala.jpg" alt="logon user" class="logon-user-image"/>
     </nav>
     
     <article>
@@ -43,11 +32,11 @@
       <ol>
         <li>Open content in new tab when user click on a link (<a href="#openLinkSolution">check solution</a>)</li>
         <li>Make left menu and body have same height (<a href="#fixLayoutIssue">check solution</a>)</li>
-        <li>On click on link "My content": same layout, different content (<a href="#openMyContentSolution">check solution</a>)</li>
-        <li>Add 1 button to "My content" page, show popup "My name is Pham Thanh My"</li>
-        <li>Add 3 lables + 3 textbox: ID, Name, Address</li>
-        <li>Make image be displayed right above "footer"</li>
-        <li>Make red color for "In this example" text in "Example 1" paragraph</li>
+        <li>On click on link "My content": same layout, different content (<button onclick="loadMyContent()">check solution</button>)</li>
+        <li>Add 1 button to "My content" page, show popup "My name is Pham Thanh My" (<button onclick="loadMyContent()">check solution</button>)</li>
+        <li>Add 3 lables + 3 textbox: ID, Name, Address (<a href="#labelAndTextBoxSolution">check solution</a>)</li>
+        <li>Make image be displayed right above "footer" (<button onclick="loadMyContent()">check solution</button>)</li>
+        <li>Make red color for "In this example" text in "Example 1" paragraph(<a href="#textColor">check solution</a>)</li>
       </ol>
 
       <h4 id="openLinkSolution">Open content in new tab when user click on a link</h4>
@@ -65,14 +54,28 @@
         <br/>
         CSS Media query is used to change layout acordingly to screen width. Remember to set viewport in html to make media query work properly.
         Viewport meta tag: Ensure that the viewport meta tag is properly set in the HTML document to ensure that the website is displayed correctly on mobile devices. It should include the width=device-width property.
+        <br/>
         <code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</code>
       </p>
       
+      <h4 id="labelAndTextboxSolution">Add label and textbox</h4>
+      <div class="label-and-textbox">
+        <label>
+          ID <input type="text"/>
+        </label>
+        <label>
+          Name <input type="text"/>
+        </label>
+        <label>
+          Address <input type="text"/>
+        </label>
+      </div>
+
       <h4>"My content" solution</h4>
       Please click on <button onclick="loadMyContent()">My content</button> to see how it work!
 
       <h3>Example 1</h3>
-      <p>In this example, we have created a header, two columns/boxes and a footer. On smaller screens, the columns will
+      <p><span id="textColor">In this example</span>, we have created a header, two columns/boxes and a footer. On smaller screens, the columns will
         stack on top of each other.
         Resize the browser window to see the responsive effect (you will learn more about this in our next chapter -
         HTML Responsive.)</p>
